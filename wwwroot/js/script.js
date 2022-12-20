@@ -58,8 +58,12 @@ function xmlr(username, code) {
     }
     if (code == "0") {
         xmlhttp.open("GET", "./getcode?username=" + username, true);
-    } else {
+    } else if (document.getElementsByTagName('meta')["desc"].content == "ssh") {
         xmlhttp.open("GET", "./cuser?username=" + username + "&code=" + code, true);
+    } else if (document.getElementsByTagName('meta')["desc"].content == "sg") {
+        xmlhttp.open("GET", "./sgrule?username=" + username + "&code=" + code, true);
+    } else {
+        return
     }
     xmlhttp.send();
 }
