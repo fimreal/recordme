@@ -953,3 +953,9 @@ a:active {
         font-size: 14px;
     }
 }
+
+#res {
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+    width: auto;
+}
